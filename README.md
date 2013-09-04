@@ -1,7 +1,7 @@
 osx_keychain.py
 ===============
 
-Want to save passwords securely via Python? Now you can, via OS X's "security" command — and this!
+Want to save passwords securely via Python? Now you can, via OS X's `security` command — and this!
 
 Example
 -------
