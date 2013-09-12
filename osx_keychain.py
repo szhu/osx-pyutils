@@ -15,7 +15,7 @@ class Program(Popen):
 	def append_args(self, args):
 		if args: self.args += args
 	def start(self):
-		if self.DEBUG: print(self.args)
+		if self.DEBUG: printe(' '.join(["'"+arg+"'" if ' ' in arg else arg for arg in self.args]))
 		from subprocess import PIPE
 		Popen.__init__(self, self.args, stdout=PIPE, stderr=PIPE, universal_newlines=True)
 	def run(self):
