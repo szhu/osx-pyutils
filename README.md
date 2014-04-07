@@ -22,15 +22,17 @@ osx_keychain.py
 
     >>> import osx_keychain
     >>> d = osx_keychain.Domain('example.com')
-    >>> d.add_password('interestinglythere', 'correct horse battery staple')
     >>> d.find_password('interestinglythere')
-    osx_keychain.PasswordNotFoundError: ...
+    Traceback (most recent call last):
+    PasswordNotFoundError: security: SecKeychainSearchCopyNext: The specified item could not be found in the keychain.
+    >>> d.add_password('interestinglythere', 'correct horse battery staple')
     >>> d.find_password('interestinglythere')
     'correct horse battery staple'
     >>> d.delete_password('interestinglythere')
     >>> d.find_password('interestinglythere')
-    osx_keychain.PasswordNotFoundError: ...
+    Traceback (most recent call last):
+    PasswordNotFoundError: security: SecKeychainSearchCopyNext: The specified item could not be found in the keychain.
 
-Here's what the result looks like from *Keychain Access* (before deleting, of course):
+Here's what the result looks like from *Keychain Access* (before deleting):
 
 ![screenshot](https://f.cloud.github.com/assets/1570168/1078791/2ca6c7a0-1534-11e3-87f0-9358917fc58e.png)
